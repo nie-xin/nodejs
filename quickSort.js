@@ -12,9 +12,12 @@ fs.readFile('QuickSort.txt', function(err, f){
     });
     //console.log(nb_array);
     var result = quickSort(nb_array);
-    console.log("Sorted array: ");
-    console.log(result);
+    // console.log("Sorted array: ");
+    // console.log(nb_array);
+    console.log("Comparison total: " + result);
 });
+
+var total = 0;
 
 var quickSort = function(array, left, right) {
 
@@ -34,11 +37,12 @@ var quickSort = function(array, left, right) {
         }
     }
 
-    return array;
+    return total;
 };
 
 var partition = function(array, left, right) {
-
+    total += array.length - 1;
+    //console.log("Comparison size: ", array.length - 1);
     var pivot = array[left];
     //console.log("Pivot: ", pivot);
     var i = left + 1;
