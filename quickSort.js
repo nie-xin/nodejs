@@ -2,6 +2,20 @@
 // reference: http://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/
 // Attention: modifications on partition part
 
+// read test file and run quick sort
+var fs  = require("fs");
+var nl = require('os').EOL;
+fs.readFile('QuickSort.txt', function(err, f){
+    var array = f.toString().split(nl);
+    var nb_array = array.map(function(elem) {
+        return parseInt(elem, 10);
+    });
+    //console.log(nb_array);
+    var result = quickSort(nb_array);
+    console.log("Sorted array: ");
+    console.log(result);
+});
+
 var quickSort = function(array, left, right) {
 
     if (array.length > 1) {
@@ -26,7 +40,7 @@ var quickSort = function(array, left, right) {
 var partition = function(array, left, right) {
 
     var pivot = array[left];
-    console.log("Pivot: ", pivot);
+    //console.log("Pivot: ", pivot);
     var i = left + 1;
 
     for (var j = left + 1; j <= right; j++) {
@@ -37,9 +51,9 @@ var partition = function(array, left, right) {
     }
 
     swap(array, left, i-1);
-    console.log("Partitioned array: ", array);
+    //console.log("Partitioned array: ", array);
 
-    console.log('Pivot index: ', array.indexOf(pivot));
+    //console.log('Pivot index: ', array.indexOf(pivot));
     return array.indexOf(pivot);
 };
 
