@@ -4,6 +4,7 @@
   "description": "Tools for creating an ebook database",
   "author": "niexin",
   "dependencies": {
-    "request": "~2.37.0"
+    "request": "~2.37.0",
+    "cheerio": "~0.17.0"
   }
 }
