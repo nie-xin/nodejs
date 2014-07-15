@@ -15,10 +15,10 @@ module.exports = function(filename, callback) {
 			};
 
 		callback(null, {
-			_id: $('pgterms\\:ebook').attr('rdf:about').replace('ebooks/', ''),
+			_id: $('pgterms\\:ebook').attr('rdf:about').replace('ebooks/', ''), 
 			title: $('dcterms\\:title').text(),
-			authors: $('pgterms\\:agent pgterms\\:name').map(collect),
-			subjects: $('[rdf\\:resource$="\LCSH"] ~ rdf\\:value').map(collect)
+			authors: $('pgterms\\:agent pgterms\\:name').map(collect), 
+			subjects: $('[rdf\\:resource$="/LCSH"] ~ rdf\\:value').map(collect)
 		});
 	});
 };
