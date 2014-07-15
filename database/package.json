@@ -5,6 +5,8 @@
   "author": "niexin",
   "dependencies": {
     "request": "~2.37.0",
-    "cheerio": "~0.17.0"
+    "cheerio": "~0.17.0",
+    "file": "~0.2.2",
+    "async": "~0.9.0"
   }
 }
